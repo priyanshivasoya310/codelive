@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inspiration Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 400px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    #quote {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #74ebd5;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #57c5cc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Quote of the Moment</h1>
+    <p id="quote">Click the button to get inspired!</p>
+    <button onclick="generateQuote()">Get Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there.",
+      "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+      "The only limit to our realization of tomorrow is our doubts of today.",
+      "Dream big and dare to fail.",
+      "Do what you can, with what you have, where you are."
+    ];
+
+    function generateQuote() {
+      const random = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').innerText = quotes[random];
+    }
+  </script>
+
+</body>
+</html>
